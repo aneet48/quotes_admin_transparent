@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Login from "./screens/Login";
+import "./App.css";
+import iris from "./images/iris_blue.png";
+import Home from "./screens/Home";
+import GuardedRoute from "./GuardedRoute";
 
-function App() {
+export default function App() {
+  const [isAutheticated, setisAutheticated] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container-full main">
+        <img
+          className="login-bg login-bg--right"
+          src={iris}
+          alt="iris-bg"
+        ></img>
+        <img className="login-bg login-bg--left" src={iris} alt="iris-bg"></img>
+        <Switch>
+          <Route path="/login">
+            <Login setisAutheticated={setisAutheticated} />
+          </Route>
+          <GuardedRoute path="/" component={Home} auth={isAutheticated} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
-
-export default App;
