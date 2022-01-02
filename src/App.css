@@ -96,18 +96,7 @@ body {
   margin-top: 25px;
   outline: none;
 }
-@media (max-width: 600px) {
-  .login-bg {
-    width: 300px;
-    height: 300px;
-  }
-  .login-bg--left {
-    left: -105px;
-  }
-  .login-form {
-    width: auto;
-  }
-}
+
 .gradient-group {
   position: absolute;
 }
@@ -149,34 +138,11 @@ body {
 }
 /* The sidebar menu */
 .sidenav {
-  background: rgb(248 249 254 / 36%);
+  background: rgb(248 249 254 / 73%);
   flex: 0.3;
   /* padding: 20px 30px; */
 }
 
-/* The navigation menu links */
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
-}
 .dashboard {
   height: 80vh;
   position: relative;
@@ -185,16 +151,17 @@ body {
 .dashboard-container {
   margin: auto;
   width: 87%;
-  background: white;
+  /* background: white; */
   position: relative;
   border-radius: 20px;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right top,
     rgba(255, 255, 255, 0.7),
     rgba(255, 255, 255, 0.3)
-  );
+  ); */
   backdrop-filter: blur(5px);
   overflow: hidden;
+  box-shadow: 0px 0px 7px 0px #8a8ffa;
 }
 .dashboard .content {
   overflow: auto;
@@ -219,7 +186,7 @@ ul.menus {
 ul.menus li:hover {
   background: #ffffff7a;
 }
-ul.menus li {
+ul.menus li a {
   padding: 15px 25px;
   text-transform: capitalize;
   font-size: 14px;
@@ -228,6 +195,7 @@ ul.menus li {
   cursor: pointer;
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 ul.menus li span {
@@ -249,4 +217,222 @@ ul.menus li span {
   color: #e91e63;
   padding: 11px;
   border-radius: 10px;
+}
+.logoutMenuIcon {
+  background: #e61d61;
+  padding: 10px;
+  color: white;
+  box-shadow: -7px 8px 22px -3px #e91e63;
+  border-radius: 10px;
+}
+.content-header {
+  text-align: right;
+  /* padding: 15px 0; */
+}
+table {
+  background: #ffffff5e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: -2px 2px 22px -3px #9caab1;
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+table th {
+  text-align: left;
+  padding: 15px 0;
+  font-weight: bold;
+  color: gray;
+  padding: 20px;
+}
+table td {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 16px 10px;
+}
+table tr:hover {
+  background: #ffffffad;
+}
+table tr td:last-child {
+  width: 15%;
+}
+.editMenuIcon {
+  color: #281fb1;
+  padding: 2px;
+  font-size: 20px;
+  background: #ffffff4f;
+  padding: 7px;
+  border-radius: 10px;
+  box-shadow: -7px 8px 22px -3px #291fb0a6;
+}
+.trashMenuIcon {
+  color: #f44336;
+  padding: 2px;
+  font-size: 20px;
+  background: #ffffff4f;
+  padding: 7px;
+  border-radius: 10px;
+  box-shadow: -7px 8px 22px -3px #f4433594;
+  margin-left: 10px;
+}
+.content-section {
+  /* margin: 45px 0; */
+}
+.quotes-card {
+  background: #ffffffc7;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: 0px 0px 7px 1px #b0dbf5;
+}
+.category-card {
+  background: #ffffffc7;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 10px 5px;
+  box-shadow: 0px 0px 7px 0px #f7e4aac7;
+}
+.quotes-info {
+  border-top: 1px solid #e0d8d8;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.quote-category {
+  color: gray;
+  font-size: 14px;
+  margin-right: 15px;
+}
+.quote-author {
+  font-size: 15px;
+  color: gray;
+}
+.quotes-action {
+  width: 21%;
+  text-align: right;
+}
+.quotes-quote {
+  font-size: 14px;
+  color: #565454;
+  line-height: 2;
+  font-weight: bold;
+  word-spacing: 1.5px;
+}
+span.category-quotes--count {
+  font-size: 13px;
+  color: gray;
+}
+
+.category-action .editMenuIcon {
+  font-size: 14px;
+}
+.category-action .trashMenuIcon {
+  font-size: 14px;
+}
+
+.categories-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.category-name {
+  margin: 8px 0;
+}
+
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+
+    animation: 1s fadeIn;
+  animation-fill-mode: forwards;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefee3;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 10px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-header h3 {
+  margin: 0;
+}
+.modal .form-field {
+  padding: 5px;
+  background-color: white;
+  box-shadow: none;
+}
+.modal .form-label {
+  text-align: left;
+  display: block;
+  margin: 5px 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+.modal .form .form-btn {
+  margin: 0;
+}
+@keyframes fadeIn {
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 650px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+  .dashboard {
+    height: 90vh;
+  }
+  .login-bg {
+    width: 300px;
+    height: 300px;
+  }
+  .login-bg--left {
+    left: -105px;
+  }
+  .login-form {
+    width: auto;
+  }
+  .sidenav {
+    display: none;
+  }
 }

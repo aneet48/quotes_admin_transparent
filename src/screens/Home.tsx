@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteRight ,faListAlt, faUser} from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
+  return 'test'
   return (
     <div className="dashboard-container">
       <div className="dashboard">
@@ -26,10 +27,6 @@ const Home = () => {
               <span>authors</span>
             </li>
           </ul>
-          {/* <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Clients</a>
-          <a href="#">Contact</a> */}
         </div>
 
         <div className="content"></div>

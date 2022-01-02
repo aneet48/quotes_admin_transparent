@@ -11,7 +11,7 @@ const Login: React.FC<Props> = ({ setisAutheticated }) => {
   const handleLogin = () => {
     console.log('clickd');
     setisAutheticated(true);
-    history.push('/')
+    history.push('/quotes')
   };
   return (
     <div className="login">
